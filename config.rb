@@ -5,7 +5,7 @@ require 'compass/import-once/activate'
 http_path = "/"
 
 # Output of .scss
-css_dir = "/"
+css_dir = "css"
 
 # Images directory
 img_dir = "img"
