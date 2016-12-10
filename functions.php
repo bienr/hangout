@@ -16,6 +16,7 @@ function hangout_styles() {
     // Main Style
     wp_enqueue_style('style', get_stylesheet_uri());
     wp_enqueue_style('responsive', get_template_directory_uri() . '/css/responsive.css');
+    wp_enqueue_style('override', get_template_directory_uri() . '/css/override.css');
 }
 add_action('wp_enqueue_scripts', 'hangout_styles');
 
@@ -55,3 +56,13 @@ function hangout_scripts_components() {
     wp_enqueue_script('jq-custom', get_template_directory_uri() . '/js/custom.js', array('jquery'), null, true);
 }
 add_action('wp_enqueue_scripts', 'hangout_scripts_components');
+
+// Theme setup
+function hangout_setup() {
+    // Register navigation menus
+    register_nav_menus(array(
+        "contact" => "Contact Menu",
+        "header" => "Header Menu"
+    ));
+}
+add_action("after_setup_theme", "hangout_setup");

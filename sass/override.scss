@@ -1,0 +1,15 @@
+/* Menu Contacts in Header */
+.menu-contacts-container,.contact-infos {
+  width: 100%;
+}
+.menu-contacts {
+  padding-left: 0;
+  list-style: none;
+  margin-left: -5px;;
+  & li {
+    display: inline-block;
+  }
+}
+.top-bar ul, .top-bar ul li {
+  float: left;
+}
