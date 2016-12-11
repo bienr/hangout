@@ -26,14 +26,16 @@ function hangout_scripts_jquery() {
     wp_deregister_script('jquery');
 
     // Register the library again from relative path
-    wp_enqueue_script('jquery', get_template_directory_uri() . '/js/jquery-2.2.4.min.js', array(), null, true);
+    wp_register_script('jquery', get_template_directory_uri() . '/js/jquery-2.2.4.min.js', array(), null, true);
+    wp_enqueue_script('jquery');
 }
 // Add jquery with increased priority
 add_action('wp_enqueue_scripts', 'hangout_scripts_jquery', 5);
 
 // Load js components
 function hangout_scripts_components() {
-    wp_enqueue_script('bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), null, true);
+    wp_register_script('bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), null, true);
+    wp_enqueue_script('bootstrap');
     wp_enqueue_script('jq-bxslider', get_template_directory_uri() . '/js/jquery.bxslider.js', array('jquery'), null, true);
 
     // Register owl carousel components

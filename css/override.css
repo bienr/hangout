@@ -1,14 +1,18 @@
 /* Menu Contacts in Top Header */
+.top-bar {
+  padding: 8px 0;
+}
+
 .menu-contacts-container, .contact-infos {
   width: 100%;
 }
 
-.menu-contacts {
+#menu-contacts {
   padding-left: 0;
   list-style: none;
   margin-left: -5px;
 }
-.menu-contacts li {
+#menu-contacts li {
   display: inline-block;
 }
 
@@ -19,4 +23,11 @@
 /* Header */
 #main-navigation-wrapper.navbar-default .navbar-brand {
   padding: 10px 0;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  background-color: transparent !important;
+  color: #1f2e46 !important;
 }
