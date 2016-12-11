@@ -4,22 +4,23 @@
 <div id="minimal-bootstrap-carousel" class="carousel default-home-slider slide carousel-fade shop-slider" data-ride="carousel">
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
-        <div class="item active slide-1" style="background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/images/slider/10.jpg);backgroudn-position: center right;">
+        <div class="item active slide-1" style="background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/images/slider/10.jpg);background-position: center right;">
 
             <div class="carousel-caption nhs-caption nhs-caption6">
                 <div class="thm-container">
                     <div class="box valign-middle">
                         <div class="content text-center">
-                            <h2 data-animation="animated fadeInUp" class="this-title">Nature, Comfort & Adventure</h2>
-                            <p data-animation="animated fadeInDown">We offer a native accommodation for budget travellers, modern room for more luxurious stay, sports bar, resto, mainland adventures, music, fun and of course, Wi-Fi</p>
-                            <a data-animation="animated fadeInLeft" href="#" class="nhs-btn3">Book now</a>
+                            <h2 data-animation="animated fadeInUp" class="this-title">Nature, Comfort & Adventure!</h2>
+                            <p data-animation="animated fadeInDown">We offer a native accommodation for budget travellers, modern room for more luxurious stay, sports bar, resto, mainland adventures, music, fun and of course, Wi-Fi!</p>
+                            <a data-animation="animated fadeInLeft" href="#" class="nhs-btn3 green-btn">Book now</a>
                             <a data-animation="animated fadeInRight" href="#" class="nhs-btn">know more</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="item  slide-2" style="background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/images/slider/11.jpg);backgroudn-position: center right;">
+        <!--
+        <div class="item  slide-2" style="background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/images/slider/11.jpg);background-position: center right;">
 
             <div class="carousel-caption nhs-caption nhs-caption7">
                 <div class="thm-container">
@@ -34,7 +35,7 @@
                 </div>
             </div>
         </div>
-        <div class="item  slide-2" style="background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/images/slider/12.jpg);backgroudn-position: center right;">
+        <div class="item  slide-2" style="background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/images/slider/12.jpg);background-position: center right;">
 
             <div class="carousel-caption nhs-caption nhs-caption8">
                 <div class="thm-container">
@@ -47,6 +48,7 @@
                 </div>
             </div>
         </div>
+        -->
     </div>
     <!-- Controls -->
     <a class="left carousel-control" href="#minimal-bootstrap-carousel" role="button" data-slide="prev">

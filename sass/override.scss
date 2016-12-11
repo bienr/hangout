@@ -1,3 +1,9 @@
+/* General */
+.green-btn {
+  background-color: #85ab00;
+  border-color: #85ab00;
+}
+
 /* Menu Contacts in Top Header */
 .top-bar {
   padding: 8px 0;
@@ -35,4 +41,8 @@
 /* Carousel */
 .carousel-inner {
   max-height: 700px;
+}
+#minimal-bootstrap-carousel .carousel-caption .thm-container .box .content {
+  top: -65px;
+  position: relative;
 }
