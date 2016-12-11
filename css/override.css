@@ -36,3 +36,8 @@
   top: 9px;
   position: absolute;
 }
+
+/* Carousel */
+.carousel-inner {
+  max-height: 700px;
+}

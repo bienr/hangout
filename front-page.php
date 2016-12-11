@@ -10,8 +10,8 @@
                 <div class="thm-container">
                     <div class="box valign-middle">
                         <div class="content text-center">
-                            <h2 data-animation="animated fadeInUp" class="this-title">Spend Your Dream Holidays</h2>
-                            <p data-animation="animated fadeInDown">Book a room at our resort now and get a discount of 30%. Fruit basket, soft drinks and a huge cozy bed are waiting for you. We will do everything to make you feel at home.</p>
+                            <h2 data-animation="animated fadeInUp" class="this-title">Nature, Comfort & Adventure</h2>
+                            <p data-animation="animated fadeInDown">We offer a native accommodation for budget travellers, modern room for more luxurious stay, sports bar, resto, mainland adventures, music, fun and of course, Wi-Fi</p>
                             <a data-animation="animated fadeInLeft" href="#" class="nhs-btn3">Book now</a>
                             <a data-animation="animated fadeInRight" href="#" class="nhs-btn">know more</a>
                         </div>
@@ -59,44 +59,6 @@
     </a>
 </div>
 <!-- Header  Slider style-->
-
-<!-- Search style-->
-
-<div class="search-wrapper">
-    <section class="container clearfix">
-        <div class="search-sec search-sec-homet">
-            <div class="overlay">
-                <div class="border">
-                    <div class="ser-in-box"><input class="form-control datepicker-example8" placeholder="Arival Date" type="text"></div>
-                    <div class="ser-in-box"><input type="text" class="form-control datepicker-example8" placeholder="Departure Date"></div>
-                    <div class="ser-in-box">
-                        <div class="select-box">
-                            <select class="select-menu" name="selectMenu">
-                                <option value="default">Adults</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="ser-in-box">
-                        <div class="select-box">
-                            <select class="select-menu" name="selectMenu">
-                                <option value="default">Children</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                            </select>
-                        </div></div>
-                    <div class="ser-in-box chk-button"><button type="submit" class="res-btn">Check Availability</button></div>
-                </div>
-            </div>
-        </div>
-    </section>
-</div>
-<!-- Search style-->
 
 <!-- Rooms And Suits style-->
 <section class="container clearfix common-pad nasir-style">
