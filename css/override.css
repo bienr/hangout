@@ -1,21 +1,22 @@
-/* Menu Contacts in Header */
-/* line 2, ../sass/override.scss */
+/* Menu Contacts in Top Header */
 .menu-contacts-container, .contact-infos {
   width: 100%;
 }
 
-/* line 5, ../sass/override.scss */
 .menu-contacts {
   padding-left: 0;
   list-style: none;
   margin-left: -5px;
 }
-/* line 9, ../sass/override.scss */
 .menu-contacts li {
   display: inline-block;
 }
 
-/* line 13, ../sass/override.scss */
 .top-bar ul, .top-bar ul li {
   float: left;
+}
+
+/* Header */
+#main-navigation-wrapper.navbar-default .navbar-brand {
+  padding: 10px 0;
 }

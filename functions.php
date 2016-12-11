@@ -66,3 +66,6 @@ function hangout_setup() {
     ));
 }
 add_action("after_setup_theme", "hangout_setup");
+
+// Register custom navigation walker
+require_once('wp_bootstrap_navwalker.php');

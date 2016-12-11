@@ -48,27 +48,16 @@
             </div>
 
             <div class="collapse navbar-collapse" id="main-navigation">
-                <ul class="nav navbar-nav ">
-                    <li>
-                    	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home <span class="glyphicon glyphicon-chevron-down"></span></a>
-					</li>
-                    <li>
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About Us <span class="glyphicon glyphicon-chevron-down"></span></a>
-                    </li>
-                    <li>
-                    	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Suits &amp; Rooms <span class="glyphicon glyphicon-chevron-down"></span></a>
-                    </li>
-                    <li>
-                    	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gallery <span class="glyphicon glyphicon-chevron-down"></span></a>
-                    </li>
-                    <li><a href="our-restaurant.html">Dinning</a></li>
-                    <li>
-                    	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">News <span class="glyphicon glyphicon-chevron-down"></span></a>
-                    </li>
-                    <li>
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contact us <span class="glyphicon glyphicon-chevron-down"></span></a>
-                    </li>
-                </ul>
+                <?php /* Primary navigation */
+                wp_nav_menu( array(
+                        'theme_location' => 'header',
+                        'depth' => 2,
+                        'container' => false,
+                        'menu_class' => 'nav navbar-nav',
+                        //Process nav menu using our custom nav walker
+                        'walker' => new wp_bootstrap_navwalker())
+                );
+                ?>
                 <ul class="nav navbar-nav right-side-nav">
                     <li class="dropdown">
                         <a href="#"><span class="phone-only">Search</span> <i class="icon icon-Search"></i></a>

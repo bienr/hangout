@@ -1,4 +1,4 @@
-/* Menu Contacts in Header */
+/* Menu Contacts in Top Header */
 .menu-contacts-container,.contact-infos {
   width: 100%;
 }
@@ -12,4 +12,9 @@
 }
 .top-bar ul, .top-bar ul li {
   float: left;
+}
+
+/* Header */
+#main-navigation-wrapper.navbar-default .navbar-brand {
+  padding: 10px 0;
 }
