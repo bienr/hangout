@@ -48,6 +48,7 @@
             </div>
 
             <div class="collapse navbar-collapse" id="main-navigation">
+<<<<<<< HEAD
                 <ul class="nav navbar-nav ">
                     <li>
                     	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home <span class="glyphicon glyphicon-chevron-down"></span></a>
@@ -69,6 +70,18 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contact us <span class="glyphicon glyphicon-chevron-down"></span></a>
                     </li>
                 </ul>
+=======
+                <?php /* Primary navigation */
+                wp_nav_menu( array(
+                        'theme_location' => 'header',
+                        'depth' => 2,
+                        'container' => false,
+                        'menu_class' => 'nav navbar-nav',
+                        //Process nav menu using our custom nav walker
+                        'walker' => new wp_bootstrap_navwalker())
+                );
+                ?>
+>>>>>>> dev
                 <ul class="nav navbar-nav right-side-nav">
                     <li class="dropdown">
                         <a href="#"><span class="phone-only">Search</span> <i class="icon icon-Search"></i></a>

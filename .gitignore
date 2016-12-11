@@ -1,4 +1,9 @@
 /.sass-cache
 /.idea
 /.DS_Store
+<<<<<<< HEAD
 /*.html
+=======
+/*.html
+/images/.DS_Store
+>>>>>>> dev

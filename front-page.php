@@ -4,22 +4,37 @@
 <div id="minimal-bootstrap-carousel" class="carousel default-home-slider slide carousel-fade shop-slider" data-ride="carousel">
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
+<<<<<<< HEAD
         <div class="item active slide-1" style="background-image: url(images/slider/10.jpg);backgroudn-position: center right;">
+=======
+        <div class="item active slide-1" style="background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/images/slider/10.jpg);background-position: center right;">
+>>>>>>> dev
 
             <div class="carousel-caption nhs-caption nhs-caption6">
                 <div class="thm-container">
                     <div class="box valign-middle">
                         <div class="content text-center">
+<<<<<<< HEAD
                             <h2 data-animation="animated fadeInUp" class="this-title">Spend Your Dream Holidays</h2>
                             <p data-animation="animated fadeInDown">Book a room at our resort now and get a discount of 30%. Fruit basket, soft drinks and a huge cozy bed are waiting for you. We will do everything to make you feel at home.</p>
                             <a data-animation="animated fadeInLeft" href="#" class="nhs-btn3">Book now</a>
+=======
+                            <h2 data-animation="animated fadeInUp" class="this-title">Nature, Comfort & Adventure!</h2>
+                            <p data-animation="animated fadeInDown">We offer a native accommodation for budget travellers, modern room for more luxurious stay, sports bar, resto, mainland adventures, music, fun and of course, Wi-Fi!</p>
+                            <a data-animation="animated fadeInLeft" href="#" class="nhs-btn3 green-btn">Book now</a>
+>>>>>>> dev
                             <a data-animation="animated fadeInRight" href="#" class="nhs-btn">know more</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
         <div class="item  slide-2" style="background-image: url(images/slider/11.jpg);backgroudn-position: center right;">
+=======
+        <!--
+        <div class="item  slide-2" style="background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/images/slider/11.jpg);background-position: center right;">
+>>>>>>> dev
 
             <div class="carousel-caption nhs-caption nhs-caption7">
                 <div class="thm-container">
@@ -34,7 +49,11 @@
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
         <div class="item  slide-2" style="background-image: url(images/slider/12.jpg);backgroudn-position: center right;">
+=======
+        <div class="item  slide-2" style="background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/images/slider/12.jpg);background-position: center right;">
+>>>>>>> dev
 
             <div class="carousel-caption nhs-caption nhs-caption8">
                 <div class="thm-container">
@@ -47,6 +66,10 @@
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
+=======
+        -->
+>>>>>>> dev
     </div>
     <!-- Controls -->
     <a class="left carousel-control" href="#minimal-bootstrap-carousel" role="button" data-slide="prev">
@@ -60,6 +83,7 @@
 </div>
 <!-- Header  Slider style-->
 
+<<<<<<< HEAD
 <!-- Search style-->
 
 <div class="search-wrapper">
@@ -98,6 +122,8 @@
 </div>
 <!-- Search style-->
 
+=======
+>>>>>>> dev
 <!-- Rooms And Suits style-->
 <section class="container clearfix common-pad nasir-style">
     <div class="sec-header sec-header-pad">
@@ -109,7 +135,11 @@
 
             <div class="room-suite room-suite-htwo">
                 <div class="item">
+<<<<<<< HEAD
                     <div class="ro-img"><img src="images/rooms/8.jpg" class="img-responsive" alt=""></div>
+=======
+                    <div class="ro-img"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/rooms/8.jpg" class="img-responsive" alt=""></div>
+>>>>>>> dev
                     <div class="ro-txt">
                         <h2>Deluxe Room</h2>
                         <p>Lorem ipsum dolor sit amet, consect etur adipisicing elit, sed do eiusmod ipsum dolor sit amet</p>
@@ -122,7 +152,11 @@
             </div>
             <div class="room-suite room-suite-htwo">
                 <div class="item">
+<<<<<<< HEAD
                     <div class="ro-img"><img src="images/rooms/9.jpg" class="img-responsive" alt=""></div>
+=======
+                    <div class="ro-img"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/rooms/9.jpg" class="img-responsive" alt=""></div>
+>>>>>>> dev
                     <div class="ro-txt">
                         <h2>Economy Room</h2>
                         <p>Lorem ipsum dolor sit amet, consect etur adipisicing elit, sed do eiusmod ipsum dolor sit amet</p>
@@ -135,7 +169,11 @@
             </div>
             <div class="room-suite room-suite-htwo">
                 <div class="item">
+<<<<<<< HEAD
                     <div class="ro-img"><img src="images/rooms/10.jpg" class="img-responsive" alt=""></div>
+=======
+                    <div class="ro-img"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/rooms/10.jpg" class="img-responsive" alt=""></div>
+>>>>>>> dev
                     <div class="ro-txt">
                         <h2>Super Room</h2>
                         <p>Lorem ipsum dolor sit amet, consect etur adipisicing elit, sed do eiusmod ipsum dolor sit amet</p>
@@ -148,7 +186,11 @@
             </div>
             <div class="room-suite room-suite-htwo">
                 <div class="item">
+<<<<<<< HEAD
                     <div class="ro-img"><img src="images/rooms/11.jpg" class="img-responsive" alt=""></div>
+=======
+                    <div class="ro-img"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/rooms/11.jpg" class="img-responsive" alt=""></div>
+>>>>>>> dev
                     <div class="ro-txt">
                         <h2>Family Room</h2>
                         <p>Lorem ipsum dolor sit amet, consect etur adipisicing elit, sed do eiusmod ipsum dolor sit amet</p>
@@ -228,7 +270,11 @@
 
                     <div class="single_wel_cont col-sm-6">
                         <a class="wel-box" href="#">
+<<<<<<< HEAD
                             <div class="icon-box"><img src="images/welcome/icon-3.png" alt="" /></div>
+=======
+                            <div class="icon-box"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/welcome/icon-3.png" alt="" /></div>
+>>>>>>> dev
                             <h4>Lexuary Spa</h4>
                             <div class="overlay transition3s">
                                 <div class="icon_position_table">
@@ -242,7 +288,11 @@
                     </div>
                     <div class="single_wel_cont col-sm-6">
                         <a class="wel-box" href="#">
+<<<<<<< HEAD
                             <div class="icon-box"><img src="images/welcome/icon-1.png" alt="" /></div>
+=======
+                            <div class="icon-box"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/welcome/icon-1.png" alt="" /></div>
+>>>>>>> dev
                             <h4>Inhouse Restaurant</h4>
                             <div class="overlay transition3s">
                                 <div class="icon_position_table">
@@ -256,7 +306,11 @@
                     </div>
                     <div class="single_wel_cont col-sm-6">
                         <a class="wel-box" href="#">
+<<<<<<< HEAD
                             <div class="icon-box"><img src="images/welcome/icon-2.png" alt="" /></div>
+=======
+                            <div class="icon-box"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/welcome/icon-2.png" alt="" /></div>
+>>>>>>> dev
                             <h4>Fitness Gym</h4>
                             <div class="overlay transition3s">
                                 <div class="icon_position_table">
@@ -270,7 +324,11 @@
                     </div>
                     <div class="single_wel_cont col-sm-6">
                         <a class="wel-box" href="#">
+<<<<<<< HEAD
                             <div class="icon-box"><img src="images/welcome/icon-3.png" alt="" /></div>
+=======
+                            <div class="icon-box"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/welcome/icon-3.png" alt="" /></div>
+>>>>>>> dev
                             <h4>Delicious Food</h4>
                             <div class="overlay transition3s">
                                 <div class="icon_position_table">
@@ -311,7 +369,11 @@
                 <div class="offer-img-box1">
                     <div class="spa-offer">
                         <div class="img_holder">
+<<<<<<< HEAD
                             <img src="images/our-resort/1.jpg" class="img-responsive" alt="">
+=======
+                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/our-resort/1.jpg" class="img-responsive" alt="">
+>>>>>>> dev
                             <div class="overlay">
                                 <div class="room-ad-cont">
                                     <h2>25% <span>off</span></h2>
@@ -328,7 +390,11 @@
                     <div class="box1">
                         <div class="img_holder">
                             <a href="booking.html">
+<<<<<<< HEAD
                                 <img src="images/our-resort/2.jpg" class="img-responsive" alt="">
+=======
+                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/our-resort/2.jpg" class="img-responsive" alt="">
+>>>>>>> dev
                                 <div class="overlay">
                                     <div class="text1">* condition apply</div>
                                     <div class="offertext1">
@@ -344,7 +410,11 @@
 
                         <div class="img_holder">
                             <a href="booking.html">
+<<<<<<< HEAD
                                 <img src="images/our-resort/3.jpg" class="img-responsive" alt="">
+=======
+                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/our-resort/3.jpg" class="img-responsive" alt="">
+>>>>>>> dev
                                 <div class="overlay">
                                     <p>Honeymoon <span>Offer</span></p>
                                     <h2>25% <span>off</span></h2>
@@ -374,7 +444,11 @@
 
         <div class="fullwidth-slider">
             <div class="item">
+<<<<<<< HEAD
                 <img src="images/gallery-two/1.jpg" alt="">
+=======
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/gallery-two/1.jpg" alt="">
+>>>>>>> dev
                 <div class="this-overlay">
                     <div class="this-texts">
                         <a href="images/gallery-two/1.jpg" class="fancybox" rel="help"><i class="icon icon-Search"></i></a>
@@ -383,7 +457,11 @@
                 </div>
             </div>
             <div class="item">
+<<<<<<< HEAD
                 <img src="images/gallery-two/2.jpg" alt="">
+=======
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/gallery-two/2.jpg" alt="">
+>>>>>>> dev
                 <div class="this-overlay">
                     <div class="this-texts">
                         <a href="images/gallery-two/2.jpg" class="fancybox" rel="help"><i class="icon icon-Search"></i></a>
@@ -392,7 +470,11 @@
                 </div>
             </div>
             <div class="item">
+<<<<<<< HEAD
                 <img src="images/gallery-two/3.jpg" alt="">
+=======
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/gallery-two/3.jpg" alt="">
+>>>>>>> dev
                 <div class="this-overlay">
                     <div class="this-texts">
                         <a href="images/gallery-two/3.jpg" class="fancybox" rel="help"><i class="icon icon-Search"></i></a>
@@ -401,7 +483,11 @@
                 </div>
             </div>
             <div class="item">
+<<<<<<< HEAD
                 <img src="images/gallery-two/4.jpg" alt="">
+=======
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/gallery-two/4.jpg" alt="">
+>>>>>>> dev
                 <div class="this-overlay">
                     <div class="this-texts">
                         <a href="images/gallery-two/4.jpg" class="fancybox" rel="help"><i class="icon icon-Search"></i></a>
@@ -410,7 +496,11 @@
                 </div>
             </div>
             <div class="item">
+<<<<<<< HEAD
                 <img src="images/gallery-two/5.jpg" alt="">
+=======
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/gallery-two/5.jpg" alt="">
+>>>>>>> dev
                 <div class="this-overlay">
                     <div class="this-texts">
                         <a href="images/gallery-two/5.jpg" class="fancybox" rel="help"><i class="icon icon-Search"></i></a>
@@ -434,7 +524,11 @@
                     <div class="item">
                         <div class="test-cont"><p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur.</p></div>
                         <div class="test-bot">
+<<<<<<< HEAD
                             <div class="tst-img"><img src="images/testimonials/1.png" alt="" class="img-responsive"></div>
+=======
+                            <div class="tst-img"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/testimonials/1.png" alt="" class="img-responsive"></div>
+>>>>>>> dev
                             <div class="client_name">
                                 <h5><a href="testimonials.html">Mark John - <span>Nescom Technology- Director</span></a></h5>
                                 <ul>
@@ -452,7 +546,11 @@
                     <div class="item">
                         <div class="test-cont"><p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur.</p></div>
                         <div class="test-bot">
+<<<<<<< HEAD
                             <div class="tst-img"><img src="images/testimonials/2.png" alt="" class="img-responsive"></div>
+=======
+                            <div class="tst-img"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/testimonials/2.png" alt="" class="img-responsive"></div>
+>>>>>>> dev
                             <div class="client_name">
                                 <h5><a href="testimonials.html">Mark John - <span>Nescom Technology- Director</span></a></h5>
                                 <ul>
@@ -468,7 +566,11 @@
                     <div class="item">
                         <div class="test-cont"><p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur.</p></div>
                         <div class="test-bot">
+<<<<<<< HEAD
                             <div class="tst-img"><img src="images/testimonials/3.png" alt="" class="img-responsive"></div>
+=======
+                            <div class="tst-img"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/testimonials/3.png" alt="" class="img-responsive"></div>
+>>>>>>> dev
                             <div class="client_name">
                                 <h5><a href="testimonials.html">Mark John - <span>Nescom Technology- Director</span></a></h5>
                                 <ul>
@@ -486,7 +588,11 @@
                     <div class="item">
                         <div class="test-cont"><p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur.</p></div>
                         <div class="test-bot">
+<<<<<<< HEAD
                             <div class="tst-img"><img src="images/testimonials/4.png" alt="" class="img-responsive"></div>
+=======
+                            <div class="tst-img"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/testimonials/4.png" alt="" class="img-responsive"></div>
+>>>>>>> dev
                             <div class="client_name">
                                 <h5><a href="testimonials.html">Mark John - <span>Nescom Technology- Director</span></a></h5>
                                 <ul>
@@ -502,7 +608,11 @@
                     <div class="item">
                         <div class="test-cont"><p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur.</p></div>
                         <div class="test-bot">
+<<<<<<< HEAD
                             <div class="tst-img"><img src="images/testimonials/5.png" alt="" class="img-responsive"></div>
+=======
+                            <div class="tst-img"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/testimonials/5.png" alt="" class="img-responsive"></div>
+>>>>>>> dev
                             <div class="client_name">
                                 <h5><a href="testimonials.html">Mark John - <span>Nescom Technology- Director</span></a></h5>
                                 <ul>
@@ -593,7 +703,11 @@
             <div class="col-lg-6 col-md-7 get-touch-two">
 
                 <div class="get-touch-wrapper row m0">
+<<<<<<< HEAD
                     <div class="touch-img"><img src="images/footer/1.jpg" class="img-responsive" alt=""></div>
+=======
+                    <div class="touch-img"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/footer/1.jpg" class="img-responsive" alt=""></div>
+>>>>>>> dev
                     <div class="touch-txt">
                         <div class="sec-header-touch">
                             <h2>Get in Touch</h2>
