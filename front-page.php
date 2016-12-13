@@ -71,19 +71,44 @@
     <div class="room-slider">
         <div class="roomsuite-slider-two">
 
+            <?php
+                $args = array('post_type' => 'rooms', 'posts_per_page' => 4, 'order' => 'ASC');
+                $rooms_query = new WP_Query($args);
+
+                if ($rooms_query->have_posts()) :
+                    while ($rooms_query->have_posts()) :
+                    $rooms_query->the_post();
+            ?>
             <div class="room-suite room-suite-htwo">
                 <div class="item">
-                    <div class="ro-img"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/rooms/8.jpg" class="img-responsive" alt=""></div>
+                    <div class="ro-img"><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('rooms-thumbnail', array( 'class' => 'img-responsive' )); ?></a></div>
                     <div class="ro-txt">
-                        <h2>Deluxe Room</h2>
-                        <p>Lorem ipsum dolor sit amet, consect etur adipisicing elit, sed do eiusmod ipsum dolor sit amet</p>
+                        <a href="<?php the_permalink(); ?>"><h2><?php the_title(); ?></h2></a>
+                        <p><?php the_excerpt(); ?></p>
                         <div class="ro-text-two">
-                            <div class="left-p-two pull-left"><a href="single-room.html" class="res-btn">details</a></div>
-                            <div class="right-p-two pull-right"><p>$135<span>Per Night</span></p></div>
+                            <div class="left-p-two pull-left"><a href="<?php the_permalink(); ?>" class="res-btn">Details</a></div>
+                            <div class="right-p-two pull-right">
+                                <p>
+                                    <?php $price = get_post_custom_values($key = 'Price'); ?>
+                                    <?php echo $price[0]; ?>
+                                    <span>
+                                        <?php $unit = get_post_custom_values($key = 'Unit'); ?>
+                                        <?php echo $unit[0]; ?>
+                                    </span>
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <?php
+                    endwhile;
+                wp_reset_postdata();
+                else: ?>
+                <p>Sorry, no rooms found. Please add rooms through the admin panel.</p>
+            <?php endif; ?>
+
+            <!--
             <div class="room-suite room-suite-htwo">
                 <div class="item">
                     <div class="ro-img"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/rooms/9.jpg" class="img-responsive" alt=""></div>
@@ -122,7 +147,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>-->
 
 
 

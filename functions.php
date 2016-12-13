@@ -66,8 +66,68 @@ function hangout_setup() {
         "contact" => "Contact Menu",
         "header" => "Header Menu"
     ));
+
+    // Add featured image support
+    add_theme_support("post-thumbnails");
+
+    // Add image sizes
+    add_image_size("rooms-thumbnail", 270, 228, true);
 }
 add_action("after_setup_theme", "hangout_setup");
 
 // Register custom navigation walker
 require_once('wp_bootstrap_navwalker.php');
+
+// Create room post type
+function create_post_type_rooms() {
+
+    // UI labels for Room post type
+    $labels = array(
+        'name'                  => _x('Rooms', 'Post Type General Name', 'hangout'),
+        'singular_name'         => _x('Room', 'Post Type Singular Name', 'hangout'),
+        'menu_name'             => __('Rooms', 'hangout'),
+        'parent_item_colon'     => __('Parent Room', 'hangout'),
+        'all_items'             => __('All Rooms', 'hangout'),
+        'view_item'             => __('View Room', 'hangout'),
+        'add_new_item'          => __('Add New Room', 'hangout'),
+        'add_new'               => __('Add New', 'hangout'),
+        'edit_item'             => __('Edit Room', 'hangout'),
+        'update_item'           => __('Update Room', 'hangout'),
+        'search_items'          => __('Search Room', 'hangout'),
+        'not_found'             => __('Not Found'),
+        'not_found_in_trash'    => __('Not Found in Trash')
+    );
+
+    // Set other options for Room post type
+    $args = array(
+        'label'                 => __('rooms', 'hangout'),
+        'description'           => __('Hangout rooms and suits', 'hangout'),
+        'labels'                => $labels,
+        'supports'              => array('title', 'editor', 'excerpt', 'thumbnail', 'comments', 'revisions', 'custom-fields'),
+        'taxonomies'            => array('facilities'),
+        'hierarchical'          => false,
+        'public'                => true,
+        'show_ui'               => true,
+        'show_in_menu'          => true,
+        'show_in_nav_menus'     => true,
+        'show_in_admin_bar'     => true,
+        'menu_position'         => 5,
+        'can_export'            => true,
+        'has_archive'           => true,
+        'exclude_from_search'   => false,
+        'publicly_queryable'    => true,
+        'capability_type'       => 'page'
+    );
+
+    // Registering Room post type
+    register_post_type('rooms', $args);
+}
+add_action('init', 'create_post_type_rooms');
+
+// Let Room types be queryable
+//function add_room_post_types_to_query($query) {
+//    if (is_home() && $query->is_main_query()) {
+//        $query->set('post_type', array('post', 'rooms'));
+//    }
+//    return $query;
+//}
