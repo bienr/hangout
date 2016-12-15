@@ -22,13 +22,32 @@
     <section class="top-bar dhomev">
         <div class="container">
             <div class="pull-left left-infos contact-infos">
-                <?php
-                $args = array(
-                    "theme_location" => "contact"
-                );
-                wp_nav_menu($args);
-                ?>
+                <ul class="pull-left left-infos contact-infos">
+                    <li>
+                        <a href="" class="top-bar-reach">REACH US:</a>
+                    </li><!-- comment for inline hack
+                     -->
+                    <?php
+                        $contact_args = array('post_type' => 'contacts', 'posts_per_page' => 5, 'order' => 'ASC');
+                        $contact_query = new WP_Query($contact_args);
 
+                        if ($contact_query->have_posts()) :
+                        while ($contact_query->have_posts()) :
+                        $contact_query->the_post();
+                    ?>
+                    <li>
+                        <a href="<?php echo get_the_content(); ?>">
+                            <?php $class = get_post_custom_values($key = 'contact-class'); ?>
+                            <i class="fa fa-<?php echo $class[0]; ?>"></i> <?php the_title(); ?></a>
+                    </li><!-- comment for inline hack
+                     -->
+                    <?php
+                        endwhile;
+                            wp_reset_postdata();
+                        else: ?>
+                        <li>Sorry, no contacts found. Please add contacts through the admin panel.</li>
+                    <?php endif; ?>
+                </ul>
             </div><!-- /.pull-left left-infos -->
         </div><!-- /.container -->
     </section><!-- /.top-bar -->

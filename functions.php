@@ -63,7 +63,6 @@ add_action('wp_enqueue_scripts', 'hangout_scripts_components');
 function hangout_setup() {
     // Register navigation menus
     register_nav_menus(array(
-        "contact" => "Contact Menu",
         "header" => "Header Menu"
     ));
 
@@ -78,11 +77,63 @@ add_action("after_setup_theme", "hangout_setup");
 // Register custom navigation walker
 require_once('wp_bootstrap_navwalker.php');
 
+// Remove wysiwyg editor for custom post types
+function init_remove_editor_support(){
+    $post_type = 'contacts';
+    remove_post_type_support($post_type, 'editor');
+}
+
+// Create contacts post type
+function create_post_type_contacts() {
+
+    // UI labels for Contact post type
+    $contact_labels = array(
+        'name'                  => _x('Contacts', 'Post Type General Name', 'hangout'),
+        'singular_name'         => _x('Contact', 'Post Type Singular Name', 'hangout'),
+        'menu_name'             => __('Contacts', 'hangout'),
+        'parent_item_colon'     => __('Parent Contact', 'hangout'),
+        'all_items'             => __('All Contacts', 'hangout'),
+        'view_item'             => __('View Contact', 'hangout'),
+        'add_new_item'          => __('Add New Contact', 'hangout'),
+        'add_new'               => __('Add New', 'hangout'),
+        'edit_item'             => __('Edit Contact', 'hangout'),
+        'update_item'           => __('Update Contact', 'hangout'),
+        'search_items'          => __('Search Contact', 'hangout'),
+        'not_found'             => __('Not Found'),
+        'not_found_in_trash'    => __('Not Found in Trash')
+    );
+
+    // Set other options for Contact post type
+    $contact_args = array(
+        'label'                 => __('contacts', 'hangout'),
+        'description'           => __('Contacts in the top bar', 'hangout'),
+        'labels'                => $contact_labels,
+        'supports'              => array('title', 'editor', 'revisions', 'custom-fields'),
+        'taxonomies'            => array('contacts'),
+        'hierarchical'          => false,
+        'public'                => true,
+        'show_ui'               => true,
+        'show_in_menu'          => true,
+        'show_in_nav_menus'     => true,
+        'show_in_admin_bar'     => true,
+        'menu_position'         => 5,
+        'can_export'            => true,
+        'has_archive'           => true,
+        'exclude_from_search'   => true,
+        'publicly_queryable'    => true,
+        'capability_type'       => 'page'
+    );
+
+    // Registering Contact post type
+    register_post_type('contacts', $contact_args);
+}
+add_action('init', 'create_post_type_contacts');
+
 // Create room post type
 function create_post_type_rooms() {
 
     // UI labels for Room post type
-    $labels = array(
+    $room_labels = array(
         'name'                  => _x('Rooms', 'Post Type General Name', 'hangout'),
         'singular_name'         => _x('Room', 'Post Type Singular Name', 'hangout'),
         'menu_name'             => __('Rooms', 'hangout'),
@@ -99,10 +150,10 @@ function create_post_type_rooms() {
     );
 
     // Set other options for Room post type
-    $args = array(
+    $room_args = array(
         'label'                 => __('rooms', 'hangout'),
         'description'           => __('Hangout rooms and suits', 'hangout'),
-        'labels'                => $labels,
+        'labels'                => $room_labels,
         'supports'              => array('title', 'editor', 'excerpt', 'thumbnail', 'comments', 'revisions', 'custom-fields'),
         'taxonomies'            => array('facilities'),
         'hierarchical'          => false,
@@ -111,7 +162,7 @@ function create_post_type_rooms() {
         'show_in_menu'          => true,
         'show_in_nav_menus'     => true,
         'show_in_admin_bar'     => true,
-        'menu_position'         => 5,
+        'menu_position'         => 6,
         'can_export'            => true,
         'has_archive'           => true,
         'exclude_from_search'   => false,
@@ -120,7 +171,7 @@ function create_post_type_rooms() {
     );
 
     // Registering Room post type
-    register_post_type('rooms', $args);
+    register_post_type('rooms', $room_args);
 }
 add_action('init', 'create_post_type_rooms');
 

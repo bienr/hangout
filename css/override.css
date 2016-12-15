@@ -26,6 +26,11 @@
   float: left;
 }
 
+.top-bar-reach {
+  top: 3px;
+  position: relative;
+}
+
 /* Header */
 #main-navigation-wrapper.navbar-default .navbar-brand {
   padding: 10px 0;
