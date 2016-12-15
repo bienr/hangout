@@ -98,9 +98,7 @@ function create_post_type_contacts() {
         'add_new'               => __('Add New', 'hangout'),
         'edit_item'             => __('Edit Contact', 'hangout'),
         'update_item'           => __('Update Contact', 'hangout'),
-        'search_items'          => __('Search Contact', 'hangout'),
-        'not_found'             => __('Not Found'),
-        'not_found_in_trash'    => __('Not Found in Trash')
+        'search_items'          => __('Search Contact', 'hangout')
     );
 
     // Set other options for Contact post type
@@ -120,8 +118,7 @@ function create_post_type_contacts() {
         'can_export'            => true,
         'has_archive'           => true,
         'exclude_from_search'   => true,
-        'publicly_queryable'    => true,
-        'capability_type'       => 'page'
+        'publicly_queryable'    => true
     );
 
     // Registering Contact post type
@@ -144,9 +141,7 @@ function create_post_type_rooms() {
         'add_new'               => __('Add New', 'hangout'),
         'edit_item'             => __('Edit Room', 'hangout'),
         'update_item'           => __('Update Room', 'hangout'),
-        'search_items'          => __('Search Room', 'hangout'),
-        'not_found'             => __('Not Found'),
-        'not_found_in_trash'    => __('Not Found in Trash')
+        'search_items'          => __('Search Room', 'hangout')
     );
 
     // Set other options for Room post type
@@ -166,14 +161,57 @@ function create_post_type_rooms() {
         'can_export'            => true,
         'has_archive'           => true,
         'exclude_from_search'   => false,
-        'publicly_queryable'    => true,
-        'capability_type'       => 'page'
+        'publicly_queryable'    => true
     );
 
     // Registering Room post type
     register_post_type('rooms', $room_args);
 }
 add_action('init', 'create_post_type_rooms');
+
+
+// Create stats post type
+function create_post_type_stats() {
+
+    // UI labels for Stats post type
+    $stat_labels = array(
+        'name'                  => _x('Stats', 'Post Type General Name', 'hangout'),
+        'singular_name'         => _x('Stat', 'Post Type Singular Name', 'hangout'),
+        'menu_name'             => __('Stats', 'hangout'),
+        'parent_item_colon'     => __('Parent Stat', 'hangout'),
+        'all_items'             => __('All Stats', 'hangout'),
+        'view_item'             => __('View Stat', 'hangout'),
+        'add_new_item'          => __('Add New Stat', 'hangout'),
+        'add_new'               => __('Add New', 'hangout'),
+        'edit_item'             => __('Edit Stat', 'hangout'),
+        'update_item'           => __('Update Stat', 'hangout'),
+        'search_items'          => __('Search Stat', 'hangout')
+    );
+
+    // Set other options for Stat post type
+    $stat_args = array(
+        'label'                 => __('stats', 'hangout'),
+        'description'           => __('Stats section under the rooms in home page', 'hangout'),
+        'labels'                => $stat_labels,
+        'supports'              => array('title', 'custom-fields'),
+        'taxonomies'            => array('stats'),
+        'hierarchical'          => false,
+        'public'                => true,
+        'show_ui'               => true,
+        'show_in_menu'          => true,
+        'show_in_nav_menus'     => false,
+        'show_in_admin_bar'     => false,
+        'menu_position'         => 7,
+        'can_export'            => true,
+        'has_archive'           => true,
+        'exclude_from_search'   => true,
+        'publicly_queryable'    => false
+    );
+
+    // Registering Stat post type
+    register_post_type('stats', $stat_args);
+}
+add_action('init', 'create_post_type_stats');
 
 // Let Room types be queryable
 //function add_room_post_types_to_query($query) {

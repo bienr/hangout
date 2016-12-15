@@ -89,10 +89,10 @@
                             <div class="left-p-two pull-left"><a href="<?php the_permalink(); ?>" class="res-btn">Details</a></div>
                             <div class="right-p-two pull-right">
                                 <p>
-                                    <?php $price = get_post_custom_values($key = 'Price'); ?>
+                                    <?php $price = get_post_custom_values($key = 'room-price'); ?>
                                     <?php echo $price[0]; ?>
                                     <span>
-                                        <?php $unit = get_post_custom_values($key = 'Unit'); ?>
+                                        <?php $unit = get_post_custom_values($key = 'room-unit-every'); ?>
                                         <?php echo $unit[0]; ?>
                                     </span>
                                 </p>
