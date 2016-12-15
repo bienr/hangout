@@ -156,41 +156,47 @@
     </div>
 </section>
 
-<!-- Counter style-->
+<!-- Stats Counter style-->
 <section class="resort-counert clearfix">
-
     <div class="container">
         <div class="row">
+
+            <?php
+                $stats_args = array('post_type' => 'stats', 'posts_per_page' => 4, 'order' => 'ASC');
+                $stats_query = new WP_Query($stats_args);
+
+                if ($stats_query->have_posts()) :
+                while ($stats_query->have_posts()) :
+                    $stats_query->the_post();
+            ?>
+
             <div class="col-md-3 col-sm-6">
                 <div class="rest-fact-counter">
                     <div class="text-box">
-                        <h4 class="timer" data-from="0" data-to="121"></h4>
+                        <h4 class="timer" data-from="0" data-to="<?php the_title(); ?>"></h4>
                     </div>
-                    <div class="text-box2"><p>new<span>friendships</span></p></div>
+                    <div class="text-box2">
+                        <?php
+                        $stat_first = get_post_custom_values($key = 'stat-firstline');
+                        $stat_second = get_post_custom_values($key = 'stat-secondline');
+                        ?>
+                        <p>
+                            <?php echo $stat_first[0]; ?>
+                            <span>
+                        <?php echo $stat_second[0]; ?></span>
+                        </p>
+                    </div>
                 </div>
-
             </div>
-            <div class="col-md-3 col-sm-6"><div class="rest-fact-counter">
-                    <div class="text-box">
-                        <h4 class="timer" data-from="0" data-to="254"></h4>
-                    </div>
-                    <div class="text-box2"><p>five start<span>ratings</span></p></div>
-                </div></div>
-            <div class="col-md-3 col-sm-6"><div class="rest-fact-counter">
-                    <div class="text-box">
-                        <h4 class="timer" data-from="0" data-to="430"></h4>
-                    </div>
-                    <div class="text-box2"><p>International<span>Guests</span></p></div>
-                </div></div>
-            <div class="col-md-3 col-sm-6"><div class="rest-fact-counter">
-                    <div class="text-box">
-                        <h4 class="timer" data-from="0" data-to="782"></h4>
-                    </div>
-                    <div class="text-box2"><p>Served<span>Breakfast</span></p></div>
-                </div></div>
+
+            <?php
+                endwhile;
+                    wp_reset_postdata();
+                else: ?>
+                <div class="col-md-12 col-sm-12">Sorry, no stats found. Please add stats through the admin panel.</div>
+            <?php endif; ?>
 
         </div>
-
     </div>
 
 </section>
@@ -203,8 +209,8 @@
             <div class="col-lg-6 col-md-6 activities-cont">
 
                 <div class="sec-header3">
-                    <h2>Activities of Resort</h2>
-                    <h3>Pick a room that best suits your taste and budget</h3>
+                    <h2>About Us</h2>
+                    <h3>What Hangout Beach & Resort is All About</h3>
                 </div>
                 <p>Tdolor sit amet, consectetur, adipis civelit sed quia non qui dolorem ipsum quia dolor sit amet, consectetur, adipis civelit. Red quia numquam.</p>
                 <p>Tdolor sit amet, consectetur, adipis civelit sed quia non qui dolorem ipsum quia dolor sit amet, consectetur, adipis civelit. Red quia numquam eius modi. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet</p>
