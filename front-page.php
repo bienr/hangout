@@ -222,62 +222,49 @@
             <div class="col-lg-6 col-md-6 col-xs-12">
                 <div class="row nasir-welboxes">
 
+                    <?php
+                        $activities_args = array('post_type' => 'activities', 'posts_per_page' => 4, 'order' => 'ASC');
+                        $activities_query = new WP_Query($activities_args);
+
+                        if ($activities_query->have_posts()) :
+                        while ($activities_query->have_posts()) :
+                            $activities_query->the_post();
+                    ?>
+
                     <div class="single_wel_cont col-sm-6">
-                        <a class="wel-box" href="#">
-                            <div class="icon-box"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/welcome/icon-3.png" alt="" /></div>
-                            <h4>Lexuary Spa</h4>
+                        <a class="wel-box" href="<?php the_permalink(); ?>">
+                            <div class="icon-box"><?php the_post_thumbnail(); ?></div>
+                            <h4><?php the_title(); ?></h4>
                             <div class="overlay transition3s">
                                 <div class="icon_position_table">
                                     <div class="icon_container border_round">
-                                        <h2>Lexuary Spa</h2>
-                                        <p>Neque porro quisquam est, qui dolorem ipsum quia  orro quisquam estdqAolor </p>
+                                        <h2><?php the_title(); ?></h2>
+                                        <p><?php the_excerpt(); ?> </p>
                                     </div>
                                 </div>
                             </div>
                         </a>
                     </div>
-                    <div class="single_wel_cont col-sm-6">
-                        <a class="wel-box" href="#">
-                            <div class="icon-box"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/welcome/icon-1.png" alt="" /></div>
-                            <h4>Inhouse Restaurant</h4>
-                            <div class="overlay transition3s">
-                                <div class="icon_position_table">
-                                    <div class="icon_container border_round">
-                                        <h2>Inhouse Restaurant</h2>
-                                        <p>Neque porro quisquam est, qui dolorem ipsum quia  orro quisquam estdqAolor </p>
+
+                    <?php
+                    endwhile;
+                        wp_reset_postdata();
+                    else: ?>
+                        <div class="single_wel_cont col-sm-6">
+                            <a class="wel-box" href="#">
+                                <div class="icon-box"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/welcome/icon-3.png" alt="" /></div>
+                                <h4>No Activity yet</h4>
+                                <div class="overlay transition3s">
+                                    <div class="icon_position_table">
+                                        <div class="icon_container border_round">
+                                            <h2>No Activity Yet</h2>
+                                            <p>Please add an activity through the admin panel.</p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="single_wel_cont col-sm-6">
-                        <a class="wel-box" href="#">
-                            <div class="icon-box"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/welcome/icon-2.png" alt="" /></div>
-                            <h4>Fitness Gym</h4>
-                            <div class="overlay transition3s">
-                                <div class="icon_position_table">
-                                    <div class="icon_container border_round">
-                                        <h2>Fitness Gym</h2>
-                                        <p>Neque porro quisquam est, qui dolorem ipsum quia  orro quisquam estdqAolor </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="single_wel_cont col-sm-6">
-                        <a class="wel-box" href="#">
-                            <div class="icon-box"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/welcome/icon-3.png" alt="" /></div>
-                            <h4>Delicious Food</h4>
-                            <div class="overlay transition3s">
-                                <div class="icon_position_table">
-                                    <div class="icon_container border_round">
-                                        <h2>Delicious Food</h2>
-                                        <p>Neque porro quisquam est, qui dolorem ipsum quia  orro quisquam estdqAolor </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
+                            </a>
+                        </div>
+                    <?php endif; ?>
 
                 </div>
 

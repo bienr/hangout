@@ -116,7 +116,7 @@ function create_post_type_contacts() {
         'show_in_admin_bar'     => true,
         'menu_position'         => 5,
         'can_export'            => true,
-        'has_archive'           => true,
+        'has_archive'           => false,
         'exclude_from_search'   => true,
         'publicly_queryable'    => true
     );
@@ -210,7 +210,7 @@ function create_post_type_stats() {
         'show_in_admin_bar'     => false,
         'menu_position'         => 7,
         'can_export'            => true,
-        'has_archive'           => true,
+        'has_archive'           => false,
         'exclude_from_search'   => true,
         'publicly_queryable'    => false
     );
@@ -219,6 +219,50 @@ function create_post_type_stats() {
     register_post_type('stats', $stat_args);
 }
 add_action('init', 'create_post_type_stats');
+
+
+// Create Activities post type
+function create_post_type_activities() {
+
+    // UI labels for Activities post type
+    $activity_labels = array(
+        'name'                  => _x('Activities', 'Post Type General Name', 'hangout'),
+        'singular_name'         => _x('Activity', 'Post Type Singular Name', 'hangout'),
+        'menu_name'             => __('Activities', 'hangout'),
+        'parent_item_colon'     => __('Parent Activity', 'hangout'),
+        'all_items'             => __('All Activities', 'hangout'),
+        'view_item'             => __('View Activity', 'hangout'),
+        'add_new_item'          => __('Add New Activity', 'hangout'),
+        'add_new'               => __('Add New', 'hangout'),
+        'edit_item'             => __('Edit Activity', 'hangout'),
+        'update_item'           => __('Update Activity', 'hangout'),
+        'search_items'          => __('Search Activity', 'hangout')
+    );
+
+    // Set other options for Activity post type
+    $activity_args = array(
+        'label'                 => __('activities', 'hangout'),
+        'description'           => __('Activities under the About section in home page', 'hangout'),
+        'labels'                => $activity_labels,
+        'supports'              => array('title', 'editor', 'thumbnail', 'excerpt'),
+        'taxonomies'            => array('activities'),
+        'hierarchical'          => false,
+        'public'                => true,
+        'show_ui'               => true,
+        'show_in_menu'          => true,
+        'show_in_nav_menus'     => false,
+        'show_in_admin_bar'     => false,
+        'menu_position'         => 8,
+        'can_export'            => true,
+        'has_archive'           => false,
+        'exclude_from_search'   => true,
+        'publicly_queryable'    => false
+    );
+
+    // Registering Activity post type
+    register_post_type('activities', $activity_args);
+}
+add_action('init', 'create_post_type_activities');
 
 function add_excerpts_to_pages() {
     add_post_type_support( 'page', 'excerpt' );
