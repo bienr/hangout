@@ -84,7 +84,7 @@
                     <div class="ro-img"><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('rooms-thumbnail', array( 'class' => 'img-responsive' )); ?></a></div>
                     <div class="ro-txt">
                         <a href="<?php the_permalink(); ?>"><h2><?php the_title(); ?></h2></a>
-                        <p><?php the_excerpt(); ?></p>
+                        <?php the_excerpt(); ?>
                         <div class="ro-text-two">
                             <div class="left-p-two pull-left"><a href="<?php the_permalink(); ?>" class="res-btn">Details</a></div>
                             <div class="right-p-two pull-right">
@@ -168,7 +168,7 @@
             ?>
                 <div class="sec-header3">
                     <h2><?php echo get_the_title(16); ?></h2>
-                    <h3>What Hangout Beach & Resort is All About</h3>
+                    <h3>What Hangout Beach & Resort is all about</h3>
                 </div>
                 <?php echo $about_excerpt; ?>
                 <a href="<?php echo get_permalink(16); ?>" class="res-btn">About us<i class="fa fa-arrow-right"></i></a>
@@ -194,7 +194,7 @@
                                 <div class="icon_position_table">
                                     <div class="icon_container border_round">
                                         <h2><?php the_title(); ?></h2>
-                                        <p><?php the_excerpt(); ?> </p>
+                                        <?php the_excerpt(); ?>
                                     </div>
                                 </div>
                             </div>
@@ -228,74 +228,6 @@
         </div>
     </div>
 </div>
-<!-- Our Offer style-->
-<section class="our-offer-htwo clearfix">
-
-    <div class="container clearfix common-pad">
-
-        <div class="row">
-
-            <div class="col-md-4 our-offer-left">
-                <div class="sec-header3">
-                    <h2>Our Offers</h2>
-                    <h3>Pick a room that best suits</h3>
-                </div>
-                <p>Tdolor sit amet, consectetur, adipis civelit sed quia non qui dolorem ipsum quia dolor sit amet, consectetur, adipis civelit. Red quia numquam.</p>
-                <p>Tdolor sit amet, consectetur, adipis civelit sed quia non qui dolorem ipsum quia dolor sit amet, consectetur, adipis civelit. Red quia numquam eius modi. Neque porro quisquam.</p>
-
-            </div>
-            <div class="col-md-8 offer-right">
-
-                <div class="offer-img-box1">
-                    <div class="spa-offer">
-                        <div class="img_holder">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/our-resort/1.jpg" class="img-responsive" alt="">
-                            <div class="overlay">
-                                <div class="room-ad-cont">
-                                    <h2>25% <span>off</span></h2>
-                                    <h3>Weeken Spa Offer</h3>
-                                    <p>Enjoy a luxurious SPA weekend dedicated to helping you unwind.</p>
-                                    <a href="booking.html">Read more</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="offer-img-box2">
-                    <div class="box1">
-                        <div class="img_holder">
-                            <a href="booking.html">
-                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/our-resort/2.jpg" class="img-responsive" alt="">
-                                <div class="overlay">
-                                    <div class="text1">* condition apply</div>
-                                    <div class="offertext1">
-                                        <p>15% <span class="off-txt">off</span> <span class="winter-txt">In Winter<br>Season</span></p>
-                                    </div>
-
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="box2">
-
-                        <div class="img_holder">
-                            <a href="booking.html">
-                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/our-resort/3.jpg" class="img-responsive" alt="">
-                                <div class="overlay">
-                                    <p>Honeymoon <span>Offer</span></p>
-                                    <h2>25% <span>off</span></h2>
-                                    <h6>* condition apply</h6>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
 <!-- Our Gallery style-->
 <section class="our-galler-htwo clearfix common-pad">
@@ -304,58 +236,62 @@
 
         <div class="sec-header sec-w-header">
             <h2>Our Gallery</h2>
-            <h3>Pick a room that best suits your taste and budget</h3>
+            <h3>Check out what's happening at Hangout Beach & Resort</h3>
         </div>
     </div>
 
     <div class="fullwidth-silder">
 
+        <?php
+        $gallery_content = get_post_field('post_content', 91);
+        echo do_shortcode( $gallery_content );
+        ?>
+
+        <p>This code here below should display a gallery...</p>
+        <?php
+        while ( have_posts() ) : the_post();
+            if ( get_post_gallery() ) :
+                $gallery = get_post_gallery( get_the_ID(), false );
+
+                /* Loop through all the image and output them one by one */
+                foreach( $gallery['src'] as $src ) : ?>
+                    <img src="<?php echo $src; ?>" class="my-custom-class" alt="Gallery image" />
+                    <?php
+                endforeach;
+            endif;
+        endwhile;
+        ?>
+
+<!--        OR-->
+        <?php
+        echo get_post_format(91);
+        $gallery_args = array('post_type' => 'post', 'posts_per_page' => 1,
+            'tax_query' => array(
+                array(
+                    array(
+                        'terms'    => array( 'post-format-gallery' ),
+                    )
+                ),
+            )
+        );
+        $gallery_query = new WP_Query($gallery_args);
+
+        if ($gallery_query->have_posts()) :
+        while ($gallery_query->have_posts()) :
+            $gallery_query->the_post();
+            the_title();
+        ?>
+
+            <?php
+        endwhile;
+            wp_reset_postdata();
+        else: ?>
+            <div class="col-md-12 col-sm-12">Sorry, no gallery found. Please add gallery through the admin panel.</div>
+        <?php endif; ?>
+
+
         <div class="fullwidth-slider">
-            <div class="item">
-                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/gallery-two/1.jpg" alt="">
-                <div class="this-overlay">
-                    <div class="this-texts">
-                        <a href="images/gallery-two/1.jpg" class="fancybox" rel="help"><i class="icon icon-Search"></i></a>
-                        <h4 class="this-title">our staff</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/gallery-two/2.jpg" alt="">
-                <div class="this-overlay">
-                    <div class="this-texts">
-                        <a href="images/gallery-two/2.jpg" class="fancybox" rel="help"><i class="icon icon-Search"></i></a>
-                        <h4 class="this-title">exterior view</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/gallery-two/3.jpg" alt="">
-                <div class="this-overlay">
-                    <div class="this-texts">
-                        <a href="images/gallery-two/3.jpg" class="fancybox" rel="help"><i class="icon icon-Search"></i></a>
-                        <h4 class="this-title">bedroom</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/gallery-two/4.jpg" alt="">
-                <div class="this-overlay">
-                    <div class="this-texts">
-                        <a href="images/gallery-two/4.jpg" class="fancybox" rel="help"><i class="icon icon-Search"></i></a>
-                        <h4 class="this-title">swiming pool</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/gallery-two/5.jpg" alt="">
-                <div class="this-overlay">
-                    <div class="this-texts">
-                        <a href="images/gallery-two/5.jpg" class="fancybox" rel="help"><i class="icon icon-Search"></i></a>
-                        <h4 class="this-title">our restaurant</h4>
-                    </div>
-                </div>
-            </div>
+
         </div>
     </div>
 </section>

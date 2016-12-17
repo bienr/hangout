@@ -71,6 +71,9 @@ function hangout_setup() {
 
     // Add image sizes
     add_image_size("rooms-thumbnail", 270, 228, true);
+
+    // Enable gallery post format
+    add_theme_support("post-formats", array("gallery"));
 }
 add_action("after_setup_theme", "hangout_setup");
 
