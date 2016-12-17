@@ -107,51 +107,6 @@
                 else: ?>
                 <p>Sorry, no rooms found. Please add rooms through the admin panel.</p>
             <?php endif; ?>
-
-            <!--
-            <div class="room-suite room-suite-htwo">
-                <div class="item">
-                    <div class="ro-img"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/rooms/9.jpg" class="img-responsive" alt=""></div>
-                    <div class="ro-txt">
-                        <h2>Economy Room</h2>
-                        <p>Lorem ipsum dolor sit amet, consect etur adipisicing elit, sed do eiusmod ipsum dolor sit amet</p>
-                        <div class="ro-text-two">
-                            <div class="left-p-two pull-left"><a href="single-room.html" class="res-btn">details</a></div>
-                            <div class="right-p-two pull-right"><p>$215<span>Per Night</span></p></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="room-suite room-suite-htwo">
-                <div class="item">
-                    <div class="ro-img"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/rooms/10.jpg" class="img-responsive" alt=""></div>
-                    <div class="ro-txt">
-                        <h2>Super Room</h2>
-                        <p>Lorem ipsum dolor sit amet, consect etur adipisicing elit, sed do eiusmod ipsum dolor sit amet</p>
-                        <div class="ro-text-two">
-                            <div class="left-p-two pull-left"><a href="single-room.html" class="res-btn">details</a></div>
-                            <div class="right-p-two pull-right"><p>$315<span>Per Night</span></p></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="room-suite room-suite-htwo">
-                <div class="item">
-                    <div class="ro-img"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/rooms/11.jpg" class="img-responsive" alt=""></div>
-                    <div class="ro-txt">
-                        <h2>Family Room</h2>
-                        <p>Lorem ipsum dolor sit amet, consect etur adipisicing elit, sed do eiusmod ipsum dolor sit amet</p>
-                        <div class="ro-text-two">
-                            <div class="left-p-two pull-left"><a href="single-room.html" class="res-btn">details</a></div>
-                            <div class="right-p-two pull-right"><p>$199<span>Per Night</span></p></div>
-                        </div>
-                    </div>
-                </div>
-            </div>-->
-
-
-
-
         </div>
     </div>
 </section>
