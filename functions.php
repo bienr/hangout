@@ -169,6 +169,13 @@ function create_post_type_rooms() {
 }
 add_action('init', 'create_post_type_rooms');
 
+// Let Room types be queryable
+//function add_room_post_types_to_query($query) {
+//    if (is_home() && $query->is_main_query()) {
+//        $query->set('post_type', array('post', 'rooms'));
+//    }
+//    return $query;
+//}
 
 // Create stats post type
 function create_post_type_stats() {
@@ -213,10 +220,7 @@ function create_post_type_stats() {
 }
 add_action('init', 'create_post_type_stats');
 
-// Let Room types be queryable
-//function add_room_post_types_to_query($query) {
-//    if (is_home() && $query->is_main_query()) {
-//        $query->set('post_type', array('post', 'rooms'));
-//    }
-//    return $query;
-//}
+function add_excerpts_to_pages() {
+    add_post_type_support( 'page', 'excerpt' );
+}
+add_action( 'init', 'add_excerpts_to_pages' );

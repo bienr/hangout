@@ -207,15 +207,16 @@
         <div class="row">
 
             <div class="col-lg-6 col-md-6 activities-cont">
-
+            <?php
+            $about_page = get_page_by_title('About Us');
+            $about_excerpt = $about_page->post_excerpt;
+            ?>
                 <div class="sec-header3">
-                    <h2>About Us</h2>
+                    <h2><?php echo get_the_title(16); ?></h2>
                     <h3>What Hangout Beach & Resort is All About</h3>
                 </div>
-                <p>Tdolor sit amet, consectetur, adipis civelit sed quia non qui dolorem ipsum quia dolor sit amet, consectetur, adipis civelit. Red quia numquam.</p>
-                <p>Tdolor sit amet, consectetur, adipis civelit sed quia non qui dolorem ipsum quia dolor sit amet, consectetur, adipis civelit. Red quia numquam eius modi. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet</p>
-
-                <a href="aboutus.html" class="res-btn">About us<i class="fa fa-arrow-right"></i></a>
+                <?php echo $about_excerpt; ?>
+                <a href="<?php echo get_permalink(16); ?>" class="res-btn">About us<i class="fa fa-arrow-right"></i></a>
 
             </div>
             <div class="col-lg-6 col-md-6 col-xs-12">
