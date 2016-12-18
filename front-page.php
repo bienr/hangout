@@ -321,15 +321,14 @@
                                 <h5>
                                     <?php
                                         $testi_position = get_post_custom_values($key = 'testi-position');
+                                        $testi_rating = get_post_custom_values($key = 'testi-rating')[0];
                                     ?>
                                     <a href="<?php the_permalink(); ?>"><?php the_title(); ?> - <span><?php echo $testi_position[0]; ?></span></a>
                                 </h5>
                                 <ul>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                    <?php for($i = 1; $i < $testi_rating; $i++) { ?>
+                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                    <?php }; ?>
                                 </ul>
                             </div>
 
