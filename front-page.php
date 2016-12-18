@@ -81,7 +81,7 @@
             ?>
             <div class="room-suite room-suite-htwo">
                 <div class="item">
-                    <div class="ro-img"><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('rooms-thumbnail', array( 'class' => 'img-responsive' )); ?></a></div>
+                    <a href="<?php the_permalink(); ?>"><div class="ro-img room-radius"><?php the_post_thumbnail('rooms-thumbnail', array( 'class' => 'img-responsive room-radius' )); ?></div></a>
                     <div class="ro-txt">
                         <a href="<?php the_permalink(); ?>"><h2><?php the_title(); ?></h2></a>
                         <?php the_excerpt(); ?>
@@ -326,7 +326,7 @@
                                     <a href="<?php the_permalink(); ?>"><?php the_title(); ?> - <span><?php echo $testi_position[0]; ?></span></a>
                                 </h5>
                                 <ul>
-                                    <?php for($i = 1; $i < $testi_rating; $i++) { ?>
+                                    <?php for($i = 1; $i <= $testi_rating; $i++) { ?>
                                         <li><a href="#"><i class="fa fa-star"></i></a></li>
                                     <?php }; ?>
                                 </ul>
@@ -408,13 +408,8 @@
                         <h3>John Doe<span>(Senior Agent)</span></h3>
                         <p>Phone : 604-786-4440</p>
                         <p>Email : info@contactjohndoe.com</p>
-
                     </div>
-
                 </div>
-
-
-
             </div>
 
             <div class="col-lg-6 col-md-5 home-two-msgwrapper">

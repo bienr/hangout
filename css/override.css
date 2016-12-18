@@ -62,5 +62,30 @@
 .rounded-testi {
   -moz-border-radius: 38px;
   -webkit-border-radius: 38px;
-  border-radius: 80px;
+  border-radius: 38px;
+}
+
+/* Rooms */
+.common-pad-inner {
+  padding-top: 4em;
+}
+
+.single-room-wrapper .room-overview .table > tbody > tr > th {
+  width: 20%;
+}
+
+.attachment-room-lg-thumbnail {
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+}
+
+.room-radius {
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.single-room-wrapper .question-wrapper {
+  margin: 3em 0 0;
 }

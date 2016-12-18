@@ -57,3 +57,20 @@
 .rounded-testi {
   @include border-radius(38px);
 }
+
+/* Rooms */
+.common-pad-inner {
+  padding-top: 4em;
+}
+.single-room-wrapper .room-overview .table > tbody > tr > th {
+  width: 20%;
+}
+.attachment-room-lg-thumbnail {
+  @include border-radius(15px);
+}
+.room-radius {
+  @include border-radius(10px);
+}
+.single-room-wrapper .question-wrapper {
+  margin: 3em 0 0;
+}
