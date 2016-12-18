@@ -48,6 +48,10 @@
   position: absolute;
 }
 
+#main-navigation-wrapper .dropdown-submenu > li.current-menu-item.active > a {
+  color: #fff;
+}
+
 /* Carousel */
 .carousel-inner {
   max-height: 700px;

@@ -43,6 +43,9 @@
   top: 9px;
   position: absolute;
 }
+#main-navigation-wrapper .dropdown-submenu > li.current-menu-item.active > a {
+  color: #fff;
+}
 
 /* Carousel */
 .carousel-inner {
