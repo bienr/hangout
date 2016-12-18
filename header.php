@@ -24,7 +24,7 @@
             <div class="pull-left left-infos contact-infos">
                 <ul class="pull-left left-infos contact-infos">
                     <li>
-                        <a href="" class="top-bar-reach">REACH US:</a>
+                        <a href="" class="top-bar-reach">REACH US THROUGH:</a>
                     </li><!-- comment for inline hack
                      -->
                     <?php

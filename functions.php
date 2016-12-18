@@ -71,6 +71,7 @@ function hangout_setup() {
 
     // Add image sizes
     add_image_size("rooms-thumbnail", 270, 228, true);
+    add_image_size("testi-thumbnail", 76, 76, true);
 
     // Enable gallery post format
     add_theme_support("post-formats", array("gallery"));
@@ -85,6 +86,13 @@ function init_remove_editor_support(){
     $post_type = 'contacts';
     remove_post_type_support($post_type, 'editor');
 }
+
+// Add excerpt to the pages
+function add_excerpts_to_pages() {
+    add_post_type_support('page', 'excerpt');
+}
+add_action( 'init', 'add_excerpts_to_pages' );
+
 
 // Create contacts post type
 function create_post_type_contacts() {
@@ -223,7 +231,6 @@ function create_post_type_stats() {
 }
 add_action('init', 'create_post_type_stats');
 
-
 // Create Activities post type
 function create_post_type_activities() {
 
@@ -267,7 +274,45 @@ function create_post_type_activities() {
 }
 add_action('init', 'create_post_type_activities');
 
-function add_excerpts_to_pages() {
-    add_post_type_support( 'page', 'excerpt' );
+// Create Testimonials post type
+function create_post_type_testimonials() {
+
+    // UI labels for Testimonials post type
+    $testi_labels = array(
+        'name'                  => _x('Testimonials', 'Post Type General Name', 'hangout'),
+        'singular_name'         => _x('Testimonial', 'Post Type Singular Name', 'hangout'),
+        'menu_name'             => __('Testimonials', 'hangout'),
+        'parent_item_colon'     => __('Parent Testimonial', 'hangout'),
+        'all_items'             => __('All Testimonials', 'hangout'),
+        'view_item'             => __('View Testimonial', 'hangout'),
+        'add_new_item'          => __('Add New Testimonial', 'hangout'),
+        'add_new'               => __('Add New', 'hangout'),
+        'edit_item'             => __('Edit Testimonial', 'hangout'),
+        'update_item'           => __('Update Testimonial', 'hangout'),
+        'search_items'          => __('Search Testimonial', 'hangout')
+    );
+
+    // Set other options for Testimonial post type
+    $testi_args = array(
+        'label'                 => __('testimonials', 'hangout'),
+        'description'           => __('Testimonials under the Testimonials section in home page', 'hangout'),
+        'labels'                => $testi_labels,
+        'supports'              => array('title', 'editor', 'thumbnail', 'custom-fields'),
+        'taxonomies'            => array('testimonials'),
+        'hierarchical'          => false,
+        'public'                => true,
+        'show_ui'               => true,
+        'show_in_menu'          => true,
+        'show_in_nav_menus'     => false,
+        'show_in_admin_bar'     => false,
+        'menu_position'         => 9,
+        'can_export'            => true,
+        'has_archive'           => false,
+        'exclude_from_search'   => true,
+        'publicly_queryable'    => false
+    );
+
+    // Registering Testimonials post type
+    register_post_type('testimonials', $testi_args);
 }
-add_action( 'init', 'add_excerpts_to_pages' );
+add_action('init', 'create_post_type_testimonials');

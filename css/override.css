@@ -57,3 +57,10 @@
   top: -65px;
   position: relative;
 }
+
+/* Testimonials */
+.rounded-testi {
+  -moz-border-radius: 38px;
+  -webkit-border-radius: 38px;
+  border-radius: 80px;
+}

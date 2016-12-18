@@ -305,12 +305,25 @@
             </div>
             <div class="testimonials-wrapper">
                 <div class="testimonial-sliders-two">
+                    <?php
+                        $testi_args = array('post_type' => 'testimonials', 'posts_per_page' => 3, 'order' => 'ASC');
+                        $testi_query = new WP_Query($testi_args);
+
+                        if ($testi_query->have_posts()) :
+                        while ($testi_query->have_posts()) :
+                            $testi_query->the_post();
+                    ?>
                     <div class="item">
-                        <div class="test-cont"><p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur.</p></div>
+                        <div class="test-cont"><?php the_content(); ?></div>
                         <div class="test-bot">
-                            <div class="tst-img"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/testimonials/1.png" alt="" class="img-responsive"></div>
+                            <div class="tst-img"><?php the_post_thumbnail('testi-thumbnail', array('class' => 'img-responsive rounded-testi')); ?></div>
                             <div class="client_name">
-                                <h5><a href="testimonials.html">Mark John - <span>Nescom Technology- Director</span></a></h5>
+                                <h5>
+                                    <?php
+                                        $testi_position = get_post_custom_values($key = 'testi-position');
+                                    ?>
+                                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?> - <span><?php echo $testi_position[0]; ?></span></a>
+                                </h5>
                                 <ul>
                                     <li><a href="#"><i class="fa fa-star"></i></a></li>
                                     <li><a href="#"><i class="fa fa-star"></i></a></li>
@@ -322,81 +335,15 @@
 
                         </div>
                     </div>
-
-                    <div class="item">
-                        <div class="test-cont"><p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur.</p></div>
-                        <div class="test-bot">
-                            <div class="tst-img"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/testimonials/2.png" alt="" class="img-responsive"></div>
-                            <div class="client_name">
-                                <h5><a href="testimonials.html">Mark John - <span>Nescom Technology- Director</span></a></h5>
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="test-cont"><p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur.</p></div>
-                        <div class="test-bot">
-                            <div class="tst-img"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/testimonials/3.png" alt="" class="img-responsive"></div>
-                            <div class="client_name">
-                                <h5><a href="testimonials.html">Mark John - <span>Nescom Technology- Director</span></a></h5>
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                </ul>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <div class="test-cont"><p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur.</p></div>
-                        <div class="test-bot">
-                            <div class="tst-img"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/testimonials/4.png" alt="" class="img-responsive"></div>
-                            <div class="client_name">
-                                <h5><a href="testimonials.html">Mark John - <span>Nescom Technology- Director</span></a></h5>
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="test-cont"><p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur.</p></div>
-                        <div class="test-bot">
-                            <div class="tst-img"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/testimonials/5.png" alt="" class="img-responsive"></div>
-                            <div class="client_name">
-                                <h5><a href="testimonials.html">Mark John - <span>Nescom Technology- Director</span></a></h5>
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                    <?php
+                        endwhile;
+                            wp_reset_postdata();
+                        else: ?>
+                            <p>Sorry, no testimonials found. Please add testimonials through the admin panel.</p>
+                    <?php endif; ?>
                 </div>
-
             </div>
-
-
         </div>
-
-
         <div class="col-lg-6 col-md-6 event-wrapper">
 
             <div class="sec-header-two">
