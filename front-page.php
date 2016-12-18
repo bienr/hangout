@@ -350,57 +350,43 @@
             </div>
 
             <div class="our-event-t-wrapper">
-                <div class="media">
-                    <div class="media-left">
-                        <div class="date-box">
-                            <div class="date-inner">
-                                <div class="date-c-inner">
-                                    <p>25<span>June</span></p>
-                                </div>
-                            </div>
-                        </div></div>
-                    <div class="media-body">
-                        <h2>Host a Family Party</h2>
-                        <p>Nemo enim ipsam voluptatem quia voluptas sit aspern atur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem.</p>
-                    </div>
-                </div>
 
+                <?php
+                $events_args = array('post_type' => 'events', 'posts_per_page' => 3, 'order' => 'DESC');
+                $events_query = new WP_Query($events_args);
+
+                if ($events_query->have_posts()) :
+                while ($events_query->have_posts()) :
+                    $events_query->the_post();
+                ?>
 
                 <div class="media">
                     <div class="media-left">
                         <div class="date-box">
                             <div class="date-inner">
                                 <div class="date-c-inner">
-                                    <p>08<span>June</span></p>
+                                    <?php
+                                    $events_day = get_post_custom_values($key = 'events-day')[0];
+                                    $events_month = get_post_custom_values($key = 'events-month')[0];
+                                    ?>
+                                    <a href="<?php the_permalink(); ?>"><p><?php echo $events_day; ?><span><?php echo $events_month; ?></span></p></a>
                                 </div>
                             </div>
                         </div></div>
                     <div class="media-body">
-                        <h2>Host a Family Party</h2>
-                        <p>Nemo enim ipsam voluptatem quia voluptas sit aspern atur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem.</p>
+                        <a href="<?php the_permalink(); ?>"><h2><?php the_title(); ?></h2></a>
+                        <?php the_excerpt(); ?>
                     </div>
                 </div>
 
-
-                <div class="media media-last">
-                    <div class="media-left">
-                        <div class="date-box">
-                            <div class="date-inner">
-                                <div class="date-c-inner">
-                                    <p>08<span>June</span></p>
-                                </div>
-                            </div>
-                        </div></div>
-                    <div class="media-body">
-                        <h2>Host a Family Party</h2>
-                        <p>Nemo enim ipsam voluptatem quia voluptas sit aspern atur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem.</p>
-                    </div>
-                </div>
-
+                <?php
+                    endwhile;
+                        wp_reset_postdata();
+                    else: ?>
+                        <p>Sorry, no events found. Please add events through the admin panel.</p>
+                <?php endif; ?>
 
             </div>
-
-
         </div>
     </div>
 </div>

@@ -316,3 +316,46 @@ function create_post_type_testimonials() {
     register_post_type('testimonials', $testi_args);
 }
 add_action('init', 'create_post_type_testimonials');
+
+// Create Events post type
+function create_post_type_events() {
+
+    // UI labels for Events post type
+    $events_labels = array(
+        'name'                  => _x('Events', 'Post Type General Name', 'hangout'),
+        'singular_name'         => _x('Event', 'Post Type Singular Name', 'hangout'),
+        'menu_name'             => __('Events', 'hangout'),
+        'parent_item_colon'     => __('Parent Event', 'hangout'),
+        'all_items'             => __('All Events', 'hangout'),
+        'view_item'             => __('View Event', 'hangout'),
+        'add_new_item'          => __('Add New Event', 'hangout'),
+        'add_new'               => __('Add New', 'hangout'),
+        'edit_item'             => __('Edit Event', 'hangout'),
+        'update_item'           => __('Update Event', 'hangout'),
+        'search_items'          => __('Search Event', 'hangout')
+    );
+
+    // Set other options for Event post type
+    $events_args = array(
+        'label'                 => __('events', 'hangout'),
+        'description'           => __('Events under the Events section in home page', 'hangout'),
+        'labels'                => $events_labels,
+        'supports'              => array('title', 'editor', 'excerpt', 'custom-fields'),
+        'taxonomies'            => array('events'),
+        'hierarchical'          => false,
+        'public'                => true,
+        'show_ui'               => true,
+        'show_in_menu'          => true,
+        'show_in_nav_menus'     => true,
+        'show_in_admin_bar'     => true,
+        'menu_position'         => 10,
+        'can_export'            => true,
+        'has_archive'           => true,
+        'exclude_from_search'   => false,
+        'publicly_queryable'    => true
+    );
+
+    // Registering Events post type
+    register_post_type('events', $events_args);
+}
+add_action('init', 'create_post_type_events');
